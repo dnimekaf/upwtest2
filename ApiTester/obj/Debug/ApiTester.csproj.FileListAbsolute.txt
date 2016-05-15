@@ -1,0 +1,10 @@
+c:\Users\fakem\documents\visual studio 2015\Projects\task2\ApiTester\bin\Debug\ApiTester.exe.config
+c:\Users\fakem\documents\visual studio 2015\Projects\task2\ApiTester\obj\Debug\ApiTester.csprojResolveAssemblyReference.cache
+c:\Users\fakem\documents\visual studio 2015\Projects\task2\ApiTester\bin\Debug\ApiTester.exe
+c:\Users\fakem\documents\visual studio 2015\Projects\task2\ApiTester\bin\Debug\ApiTester.pdb
+c:\Users\fakem\documents\visual studio 2015\Projects\task2\ApiTester\bin\Debug\Newtonsoft.Json.dll
+c:\Users\fakem\documents\visual studio 2015\Projects\task2\ApiTester\bin\Debug\System.Net.Http.Formatting.dll
+c:\Users\fakem\documents\visual studio 2015\Projects\task2\ApiTester\bin\Debug\Newtonsoft.Json.xml
+c:\Users\fakem\documents\visual studio 2015\Projects\task2\ApiTester\bin\Debug\System.Net.Http.Formatting.xml
+c:\Users\fakem\documents\visual studio 2015\Projects\task2\ApiTester\obj\Debug\ApiTester.exe
+c:\Users\fakem\documents\visual studio 2015\Projects\task2\ApiTester\obj\Debug\ApiTester.pdb
