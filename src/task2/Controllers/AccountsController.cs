@@ -28,7 +28,7 @@ namespace task2.Controllers
         }
 
         
-        [HttpGet("get/{id}", Name="Get")]
+        [HttpGet("{id}", Name="Get")]
         public IActionResult GetById(int id)
         {
             var account = Accounts.FirstOrDefault(x => x.Id == id);
@@ -69,12 +69,16 @@ namespace task2.Controllers
         }
 
         
-        [HttpDelete("delete/{id}")]
-        public void Delete(int id)
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
         {
             var account = Accounts.FirstOrDefault(x => x.Id == id);
             if (account != null)
+            {
                 Accounts.Remove(account);
+                return Ok();
+            }
+            return HttpNotFound("No such user");
         }
     }
 }

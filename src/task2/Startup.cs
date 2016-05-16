@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
+using Microsoft.AspNet.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -18,6 +19,7 @@ namespace task2
             var builder = new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json")
                 .AddEnvironmentVariables();
+            
             Configuration = builder.Build();
         }
 
@@ -27,7 +29,9 @@ namespace task2
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
+            services.AddAuthorization();
             services.AddMvc();
+            services.AddInstance<IConfiguration>(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -40,11 +44,15 @@ namespace task2
 
             app.UseStaticFiles();
 
-            app.UseMvc(
-               configureRoutes: routes =>
-               {
-                   routes.MapRoute(name: "default", template: "{controller}/{action}/{id?}");
-               });
+            app.UseCookieAuthentication(options =>
+            {
+                options.AuthenticationScheme = "Cookie";
+                options.LoginPath = new PathString("/api/auth/");
+                options.AutomaticAuthenticate = true;
+                options.AutomaticChallenge = true;
+            });
+
+            app.UseMvc();
 
             
         }
